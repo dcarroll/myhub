@@ -7,3 +7,8 @@ block content
     each activity in activities
       li= activity.label + " (" + activity.id + ")" 
         button(onclick='mute()') Mute
+        button(onclick='start()') Start
+        button(onclick='stop()') Stop
+        button(onclick='volumeUp()') Volume Up
+        button(onclick='volumeDown()') Volume Down
+        

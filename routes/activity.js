@@ -10,25 +10,18 @@ var util = require('../lib/hubutils');
 var harmony = require('harmonyhubjs');
 
 /* GET users listing. */
-router.get('/mute', function(req, res, next) {
-  util.volumeMute();
-  res.send('Ok');
-});
-
-/* GET users listing. */
-router.get('/up', function(req, res, next) {
-  util.volumeUp();
-  res.send('Ok');
-});
-
-/* GET users listing. */
-router.get('/down', function(req, res, next) {
-  util.volumeDown();
-  res.send('Ok');
-});
-
 router.get('/', function(req, res, next) {
   util.volumeMute();
+  res.send('Ok');
+});
+
+router.get('/start', function(req, res, next) {
+  util.startActivity("Watch Tivo");
+  res.send('Ok');
+});
+
+router.get('/stop', function(req, res, next) {
+  util.stopActivity();
   res.send('Ok');
 });
 
